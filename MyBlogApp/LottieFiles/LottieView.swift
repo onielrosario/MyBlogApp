@@ -11,9 +11,7 @@ import Lottie
 
 
 struct LottieView: UIViewRepresentable {
-    let filename: String
-    
-    
+    @State var filename: String
     
     
     func makeUIView(context: UIViewRepresentableContext<LottieView>) -> UIView {
@@ -25,8 +23,14 @@ struct LottieView: UIViewRepresentable {
         animationView.contentMode = .scaleAspectFit
         animationView.play()
         
-        animationView.frame = view.frame
+        animationView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(animationView)
+        
+        NSLayoutConstraint.activate([
+            animationView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            animationView.heightAnchor.constraint(equalTo: view.heightAnchor)
+        ])
+        
         
         
         return view

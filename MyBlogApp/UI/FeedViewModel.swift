@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-class ContentViewModel: ObservableObject {
+class FeedViewModel: ObservableObject {
     @Published var photoCollection: [PhotoModel] = []
     
     init() {

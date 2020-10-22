@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @StateObject var vm = ContentViewModel()
+struct FeedView: View {
+    @StateObject var vm = FeedViewModel()
     
     var body: some View {
         ScrollView {
@@ -21,8 +21,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        FeedView()
     }
 }

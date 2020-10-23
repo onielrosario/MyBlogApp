@@ -19,7 +19,8 @@
 		090458C6254212F00026C61D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090458C5254212F00026C61D /* CardView.swift */; };
 		09140702254240F300D5AB81 /* AnimatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09140701254240F300D5AB81 /* AnimatedButton.swift */; };
 		091407072542539F00D5AB81 /* BlogInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091407062542539F00D5AB81 /* BlogInteractionView.swift */; };
-		09662A0E253AA70C00EC0DBD /* AimeIOSChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09662A0D253AA70C00EC0DBD /* AimeIOSChallengeApp.swift */; };
+		0914071225427B6700D5AB81 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0914071125427B6700D5AB81 /* KeyboardHandler.swift */; };
+		09662A0E253AA70C00EC0DBD /* MyBlogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09662A0D253AA70C00EC0DBD /* MyBlogApp.swift */; };
 		09662A10253AA70C00EC0DBD /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09662A0F253AA70C00EC0DBD /* FeedView.swift */; };
 		09662A12253AA70F00EC0DBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09662A11253AA70F00EC0DBD /* Assets.xcassets */; };
 		09662A20253AA71000EC0DBD /* AimeIOSChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09662A1F253AA71000EC0DBD /* AimeIOSChallengeTests.swift */; };
@@ -67,8 +68,9 @@
 		090458C5254212F00026C61D /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		09140701254240F300D5AB81 /* AnimatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedButton.swift; sourceTree = "<group>"; };
 		091407062542539F00D5AB81 /* BlogInteractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogInteractionView.swift; sourceTree = "<group>"; };
+		0914071125427B6700D5AB81 /* KeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		09662A0A253AA70C00EC0DBD /* MyBlogApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBlogApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		09662A0D253AA70C00EC0DBD /* AimeIOSChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimeIOSChallengeApp.swift; sourceTree = "<group>"; };
+		09662A0D253AA70C00EC0DBD /* MyBlogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBlogApp.swift; sourceTree = "<group>"; };
 		09662A0F253AA70C00EC0DBD /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		09662A11253AA70F00EC0DBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09662A16253AA70F00EC0DBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -239,7 +241,8 @@
 		09DD12C7253F54AE0097D9C2 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
-				09662A0D253AA70C00EC0DBD /* AimeIOSChallengeApp.swift */,
+				09662A0D253AA70C00EC0DBD /* MyBlogApp.swift */,
+				0914071125427B6700D5AB81 /* KeyboardHandler.swift */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -409,8 +412,9 @@
 				09DD12BD253F4F5D0097D9C2 /* FeedViewModel.swift in Sources */,
 				09662A46253AB79B00EC0DBD /* NetworkManager.swift in Sources */,
 				09662A10253AA70C00EC0DBD /* FeedView.swift in Sources */,
-				09662A0E253AA70C00EC0DBD /* AimeIOSChallengeApp.swift in Sources */,
+				09662A0E253AA70C00EC0DBD /* MyBlogApp.swift in Sources */,
 				0904587A2541FFBF0026C61D /* LottieView.swift in Sources */,
+				0914071225427B6700D5AB81 /* KeyboardHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

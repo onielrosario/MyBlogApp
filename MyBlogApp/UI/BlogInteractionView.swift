@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BlogInteractionView: View {
     let types = [ButtonKind.like, .comment, .favorite]
-    let action: (Int) -> Void
+    let action: (ButtonKind) -> Void
     
     var body: some View {
         HStack {
@@ -18,7 +18,7 @@ struct BlogInteractionView: View {
                 makeButton(
                     type: types[index],
                     action: {
-                    action(index)
+                    action(types[index])
                 })
                 Spacer()
             }

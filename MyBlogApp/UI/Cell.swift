@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import KingfisherSwiftUI
 
 enum OffsetState: CGFloat {
     case first = 0
@@ -15,16 +14,11 @@ enum OffsetState: CGFloat {
 }
 
 enum CellType {
-    case front, back, none
+    case front, back
 }
 
 struct Cell: View {
-    let vm: CellViewModel
-    @State var isExpanded = false
-    @State var doubleExpanded = false
-    @State var offset = OffsetState.first
-    @State var mode = CellType.none
-    
+    @EnvironmentObject var vm: CellViewModel
     var body: some View {
         makeImage()
     }
@@ -37,10 +31,9 @@ private extension Cell {
                 backCard()
                 frontCard()
             }
-            if isExpanded {
+            if vm.isExpanded {
                 Color.clear
-                    .frame(height: offset.rawValue)
-                
+                    .frame(height: vm.offset.rawValue)
             }
         }
     }
@@ -50,38 +43,41 @@ private extension Cell {
 private extension Cell {
     func backCard() -> some View {
         CardView(
-            content: Color(Asset.color(asset: .CardSecondaryBackground)),
+            content:
+                Color(Asset.color(asset: .CardSecondaryBackground)),
             buttons: BlogInteractionView(
-                action: { index in
-                    if index == 1 {
+                action: { type in
+                    if type == .like {
+                        vm.like()
+                    }
+                    if type == .comment {
                         withAnimation {
-                            doubleExpanded.toggle()
-                            offset = doubleExpanded ? .third : .second
-                            mode = doubleExpanded ? .back : .none
+                            vm.doubleExpanded.toggle()
+                            vm.offset = vm.doubleExpanded ? .third : .second
+                            vm.mode = vm.doubleExpanded ? .back : .front
                         }
                     }
+                    if type == .favorite {
+                        vm.addToFavorites()
+                    }
                 }),
-            mode: $mode)
-            .offset(y: offset.rawValue)
+            mode: $vm.mode)
+            .offset(y: vm.offset.rawValue)
     }
     
     func frontCard() -> some View {
         CardView(
-            content:
-                ZStack {
-                    KFImage(URL(string: vm.model.urls.small))
-                        .resizable()
-                },
+            content: vm.image.resizable(),
             buttons: AnimatedButton(
                 kind: .post,
                 action: {
                     withAnimation {
-                        isExpanded.toggle()
-                        if doubleExpanded {
-                            doubleExpanded.toggle()
-                            mode =  .none
+                        vm.isExpanded.toggle()
+                        if vm.doubleExpanded {
+                            vm.doubleExpanded.toggle()
+                            vm.mode =  .front
                         }
-                        offset = isExpanded ? .second : .first
+                        vm.offset = vm.isExpanded ? .second : .first
                     }
                 }),
             mode: .constant(.front)
@@ -94,6 +90,6 @@ private extension Cell {
 
 struct Cell_Previews: PreviewProvider {
     static var previews: some View {
-        Cell(vm: CellViewModel(model: PhotoModel(id: "1", altDescription: "2", urls: URLS(regular: "3", small: "4", thumb: "5"))))
+        Cell().environmentObject(CellViewModel(model: PhotoModel(id: "1", altDescription: "2", urls: URLS(regular: "3", small: "4", thumb: "5"))))
     }
 }

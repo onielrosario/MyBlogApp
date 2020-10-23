@@ -7,17 +7,19 @@
 
 import SwiftUI
 
-
 struct CardView<ImageContent: View, Button: View>: View {
     var content: ImageContent
     var buttons: Button
     @Binding var mode: CellType
+    private let height: CGFloat = 300
+    private let spacing: CGFloat = 12
+    
     var body: some View {
         ZStack {
             content
-            .frame(height: 300)
+            .frame(height: height)
                 .cornerRadius(8)
-            VStack(spacing: 12) {
+            VStack(spacing: spacing) {
                 Spacer()
                buttons
                 if mode == .back {
@@ -27,7 +29,7 @@ struct CardView<ImageContent: View, Button: View>: View {
                         .transition(.asymmetric(insertion: .scale, removal: .scale))
                 }
             }
-            .frame(height: 300)
+            .frame(height: height)
         }
     }
 }
@@ -38,9 +40,7 @@ struct CardView_Preview: PreviewProvider {
             content: Color.yellow,
             buttons: AnimatedButton(
                 kind: .post,
-                action: {
-                    
-                }),
+                action: {}),
             mode: .constant(.back))
     }
 }

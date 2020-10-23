@@ -13,7 +13,7 @@ struct FeedView: View {
         ScrollView {
             VStack {
                 ForEach(vm.photoCollection, id: \.id) { item in
-                    Cell(vm: CellViewModel(model: item))
+                    Cell().environmentObject(CellViewModel(model: item))
                 }
             }
         }

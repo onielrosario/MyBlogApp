@@ -12,7 +12,6 @@ struct PhotoModel: Codable {
     let id: String
     let altDescription: String?
     let urls: URLS
-    
     private enum CodingKeys: String, CodingKey {
         case altDescription = "alt_description"
         case urls, id

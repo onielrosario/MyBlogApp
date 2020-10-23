@@ -17,6 +17,7 @@ struct AnimatedButton: View, Identifiable {
     @State var kind: ButtonKind
     @State var selected = false
     @State var action: () -> Void
+    private let customFrame: CGFloat = 60
     
     var body: some View {
         Button(action: {
@@ -25,10 +26,16 @@ struct AnimatedButton: View, Identifiable {
         }, label: {
             if selected {
                 makeButton()
-                    .frame(width: 60, height: 60)
+                    .frame(
+                        width: customFrame,
+                        height: customFrame
+                    )
             } else {
                 makeButton()
-                    .frame(width: 60, height: 60)
+                    .frame(
+                        width: customFrame,
+                        height: customFrame
+                    )
             }
         })
     }
@@ -38,13 +45,22 @@ private extension AnimatedButton {
     @ViewBuilder func makeButton() -> some View {
         switch kind {
         case .post:
-            selected ? LottieView(filename: "minus").colorInvert() : LottieView(filename: "plus").colorInvert()
+            LottieView(
+                filename: selected ? "minus" : "plus"
+            )
+            .colorInvert()
         case .like:
-            LottieView(filename: selected ? "heartAnimation" : "heartAnimationWhite")
+            LottieView(
+                filename: selected ? "heartAnimation" : "heartAnimationWhite"
+            )
         case .comment:
-            LottieView(filename: selected ? "comment" : "comment")
+            LottieView(
+                filename: selected ? "comment" : "comment"
+            )
         case .favorite:
-            LottieView(filename: selected ? "star" : "starWhite")
+            LottieView(
+                filename: selected ? "star" : "starWhite"
+            )
         }
     }
 }
@@ -54,8 +70,6 @@ struct AnimatedButton_Previews: PreviewProvider {
         AnimatedButton(
             kind: .post,
             selected: true,
-            action: {
-                print("klk")
-            })
+            action: {})
     }
 }

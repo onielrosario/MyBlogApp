@@ -15,7 +15,7 @@ enum ButtonKind {
 struct AnimatedButton: View, Identifiable {
     let id = UUID()
     @State var kind: ButtonKind
-    @State var selected: Bool
+    @State var selected = false
     @State var action: () -> Void
     
     var body: some View {
@@ -25,8 +25,10 @@ struct AnimatedButton: View, Identifiable {
         }, label: {
             if selected {
                 makeButton()
+                    .frame(width: 60, height: 60)
             } else {
                 makeButton()
+                    .frame(width: 60, height: 60)
             }
         })
     }

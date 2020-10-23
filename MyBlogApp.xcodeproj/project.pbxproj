@@ -18,6 +18,7 @@
 		09045894254203D30026C61D /* starWhite.json in Resources */ = {isa = PBXBuildFile; fileRef = 09045890254203D30026C61D /* starWhite.json */; };
 		090458C6254212F00026C61D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090458C5254212F00026C61D /* CardView.swift */; };
 		09140702254240F300D5AB81 /* AnimatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09140701254240F300D5AB81 /* AnimatedButton.swift */; };
+		091407072542539F00D5AB81 /* BlogInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091407062542539F00D5AB81 /* BlogInteractionView.swift */; };
 		09662A0E253AA70C00EC0DBD /* AimeIOSChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09662A0D253AA70C00EC0DBD /* AimeIOSChallengeApp.swift */; };
 		09662A10253AA70C00EC0DBD /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09662A0F253AA70C00EC0DBD /* FeedView.swift */; };
 		09662A12253AA70F00EC0DBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09662A11253AA70F00EC0DBD /* Assets.xcassets */; };
@@ -34,7 +35,7 @@
 		09DD12CF253F550D0097D9C2 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DD12CE253F550D0097D9C2 /* Cell.swift */; };
 		09DD12D4253F870A0097D9C2 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DD12D3253F87090097D9C2 /* CellViewModel.swift */; };
 		09DD12D9253F89710097D9C2 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DD12D8253F89710097D9C2 /* Endpoint.swift */; };
-		09DD12DF253F89F40097D9C2 /* ImageAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DD12DE253F89F40097D9C2 /* ImageAsset.swift */; };
+		09DD12DF253F89F40097D9C2 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DD12DE253F89F40097D9C2 /* Asset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		09045890254203D30026C61D /* starWhite.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = starWhite.json; sourceTree = "<group>"; };
 		090458C5254212F00026C61D /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		09140701254240F300D5AB81 /* AnimatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedButton.swift; sourceTree = "<group>"; };
+		091407062542539F00D5AB81 /* BlogInteractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogInteractionView.swift; sourceTree = "<group>"; };
 		09662A0A253AA70C00EC0DBD /* MyBlogApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBlogApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09662A0D253AA70C00EC0DBD /* AimeIOSChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimeIOSChallengeApp.swift; sourceTree = "<group>"; };
 		09662A0F253AA70C00EC0DBD /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
@@ -86,7 +88,7 @@
 		09DD12CE253F550D0097D9C2 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		09DD12D3253F87090097D9C2 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		09DD12D8253F89710097D9C2 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		09DD12DE253F89F40097D9C2 /* ImageAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAsset.swift; sourceTree = "<group>"; };
+		09DD12DE253F89F40097D9C2 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 				09DD12D3253F87090097D9C2 /* CellViewModel.swift */,
 				090458C5254212F00026C61D /* CardView.swift */,
 				09140701254240F300D5AB81 /* AnimatedButton.swift */,
+				091407062542539F00D5AB81 /* BlogInteractionView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -245,7 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				09662A11253AA70F00EC0DBD /* Assets.xcassets */,
-				09DD12DE253F89F40097D9C2 /* ImageAsset.swift */,
+				09DD12DE253F89F40097D9C2 /* Asset.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -393,7 +396,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09DD12DF253F89F40097D9C2 /* ImageAsset.swift in Sources */,
+				091407072542539F00D5AB81 /* BlogInteractionView.swift in Sources */,
+				09DD12DF253F89F40097D9C2 /* Asset.swift in Sources */,
 				09BA92A9253AC6FC009DFB99 /* Network.swift in Sources */,
 				09140702254240F300D5AB81 /* AnimatedButton.swift in Sources */,
 				09DD12D9253F89710097D9C2 /* Endpoint.swift in Sources */,

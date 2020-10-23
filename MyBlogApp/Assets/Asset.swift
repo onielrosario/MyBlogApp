@@ -14,9 +14,16 @@ enum ImageAsset: String {
     
 }
 
+enum ColorAsset: String {
+    case CardSecondaryBackground
+}
+
 
 // We can implement new fonts, color theme methods.
 struct Asset {
+    static func color(asset: ColorAsset) -> UIColor {
+        return UIColor(named: asset.rawValue)!
+    }
 
     static func image(asset: ImageAsset) -> UIImage {
         return UIImage(named: asset.rawValue)!

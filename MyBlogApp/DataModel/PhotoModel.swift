@@ -10,7 +10,7 @@ import Foundation
 
 struct PhotoModel: Codable {
     let id: String
-    let altDescription: String
+    let altDescription: String?
     let urls: URLS
     
     private enum CodingKeys: String, CodingKey {

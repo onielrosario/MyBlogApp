@@ -8,12 +8,10 @@
 import SwiftUI
 
 
-struct CardView<ImageContent: View>: View {
-    let action: () -> Void
+struct CardView<ImageContent: View, Button: View>: View {
     var content: ImageContent
-    @State var expanded: Bool
+    var buttons: Button
     @Binding var mode: CellType
-    let kind: ButtonKind
     var body: some View {
         ZStack {
             content
@@ -21,13 +19,7 @@ struct CardView<ImageContent: View>: View {
                 .cornerRadius(8)
             VStack(spacing: 12) {
                 Spacer()
-                AnimatedButton(
-                    kind: kind,
-                    selected: expanded,
-                    action: {
-                        self.action()
-                    })
-                    .frame(width: 60, height: 60)
+               buttons
                 if mode == .back {
                     Text("Im here")
                         .frame(maxWidth: .infinity, maxHeight: 30)
@@ -43,13 +35,13 @@ struct CardView<ImageContent: View>: View {
 struct CardView_Preview: PreviewProvider {
     static var previews: some View {
         CardView(
-            action: {
-                
-            },
             content: Color.yellow,
-            expanded: true,
-            mode: .constant(.front),
-            kind: .post)
+            buttons: AnimatedButton(
+                kind: .post,
+                action: {
+                    
+                }),
+            mode: .constant(.back))
     }
 }
 

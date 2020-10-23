@@ -16,19 +16,7 @@ enum OffsetState: CGFloat {
 
 enum CellType {
     case front, back, none
-    
-    
-    func lotties() -> (LottieView, LottieView) {
-        switch self {
-        case .front:
-            return (LottieView(filename: "minus"), LottieView(filename: "plus") )
-        default:
-            return (LottieView(filename: "comment"), LottieView(filename: "comment") )
-        }
-    }
 }
-
-
 
 struct Cell: View {
     let vm: CellViewModel
@@ -38,45 +26,16 @@ struct Cell: View {
     @State var mode = CellType.none
     
     var body: some View {
-        makeImage(isFavorite: vm.isFavorite)
+        makeImage()
     }
 }
 
 private extension Cell {
-     func makeImage(isFavorite: Bool) -> some View {
+    func makeImage() -> some View {
         VStack {
             ZStack {
-                CardView(action: {
-                    self.doubleExpanded.toggle()
-                    withAnimation {
-                        mode = doubleExpanded ? .back : .none
-                        offset = doubleExpanded ? .third : .second
-                    }
-                },
-                content: Color.green,
-                expanded: doubleExpanded,
-                mode: $mode, kind: .comment)
-                .offset(y: offset.rawValue)
-                
-                CardView(
-                    action: {
-                    withAnimation {
-                        self.isExpanded.toggle()
-                        if doubleExpanded {
-                            doubleExpanded.toggle()
-                            mode = .none
-                        }
-                        self.offset = isExpanded ? .second : .first
-                    }
-                },
-                    content:
-                    //                    KFImage(URL(string: vm.model.urls.small))
-                    //                    .resizable()
-                    Color.yellow,
-                expanded: isExpanded,
-                mode: .constant(.front),
-                    kind: .post
-                )
+                backCard()
+                frontCard()
             }
             if isExpanded {
                 Color.clear
@@ -88,10 +47,53 @@ private extension Cell {
 }
 
 
-        
-        
-        struct Cell_Previews: PreviewProvider {
-            static var previews: some View {
-                Cell(vm: CellViewModel(model: PhotoModel(id: "1", altDescription: "2", urls: URLS(regular: "3", small: "4", thumb: "5"))))
-            }
-        }
+private extension Cell {
+    func backCard() -> some View {
+        CardView(
+            content: Color(Asset.color(asset: .CardSecondaryBackground)),
+            buttons: BlogInteractionView(
+                action: { index in
+                    if index == 1 {
+                        withAnimation {
+                            doubleExpanded.toggle()
+                            offset = doubleExpanded ? .third : .second
+                            mode = doubleExpanded ? .back : .none
+                        }
+                    }
+                }),
+            mode: $mode)
+            .offset(y: offset.rawValue)
+    }
+    
+    func frontCard() -> some View {
+        CardView(
+            content:
+                ZStack {
+                    KFImage(URL(string: vm.model.urls.small))
+                        .resizable()
+                },
+            buttons: AnimatedButton(
+                kind: .post,
+                action: {
+                    withAnimation {
+                        isExpanded.toggle()
+                        if doubleExpanded {
+                            doubleExpanded.toggle()
+                            mode =  .none
+                        }
+                        offset = isExpanded ? .second : .first
+                    }
+                }),
+            mode: .constant(.front)
+        )
+    }
+    
+    
+}
+
+
+struct Cell_Previews: PreviewProvider {
+    static var previews: some View {
+        Cell(vm: CellViewModel(model: PhotoModel(id: "1", altDescription: "2", urls: URLS(regular: "3", small: "4", thumb: "5"))))
+    }
+}

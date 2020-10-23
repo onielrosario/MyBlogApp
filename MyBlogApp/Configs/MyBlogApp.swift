@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct AimeIOSChallengeApp: App {
+struct MyBlogApp: App {
     var body: some Scene {
         WindowGroup {
             FeedView()

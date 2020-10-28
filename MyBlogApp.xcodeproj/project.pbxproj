@@ -20,10 +20,13 @@
 		09140702254240F300D5AB81 /* AnimatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09140701254240F300D5AB81 /* AnimatedButton.swift */; };
 		091407072542539F00D5AB81 /* BlogInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091407062542539F00D5AB81 /* BlogInteractionView.swift */; };
 		0914071225427B6700D5AB81 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0914071125427B6700D5AB81 /* KeyboardHandler.swift */; };
+		0914071A254357F000D5AB81 /* BlogTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09140719254357F000D5AB81 /* BlogTextField.swift */; };
+		091407222543BDAB00D5AB81 /* AverageColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091407212543BDAB00D5AB81 /* AverageColor.swift */; };
+		091407272546962C00D5AB81 /* BlogOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091407262546962B00D5AB81 /* BlogOptionView.swift */; };
 		09662A0E253AA70C00EC0DBD /* MyBlogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09662A0D253AA70C00EC0DBD /* MyBlogApp.swift */; };
 		09662A10253AA70C00EC0DBD /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09662A0F253AA70C00EC0DBD /* FeedView.swift */; };
 		09662A12253AA70F00EC0DBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09662A11253AA70F00EC0DBD /* Assets.xcassets */; };
-		09662A20253AA71000EC0DBD /* AimeIOSChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09662A1F253AA71000EC0DBD /* AimeIOSChallengeTests.swift */; };
+		09662A20253AA71000EC0DBD /* MyBlogAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09662A1F253AA71000EC0DBD /* MyBlogAppTests.swift */; };
 		09662A3D253AB6DF00EC0DBD /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09662A3C253AB6DF00EC0DBD /* NetworkTests.swift */; };
 		09662A46253AB79B00EC0DBD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09662A45253AB79B00EC0DBD /* NetworkManager.swift */; };
 		09980BE8253B7F4000AF8E46 /* AimeIOSChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09662A2A253AA71000EC0DBD /* AimeIOSChallengeUITests.swift */; };
@@ -69,13 +72,16 @@
 		09140701254240F300D5AB81 /* AnimatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedButton.swift; sourceTree = "<group>"; };
 		091407062542539F00D5AB81 /* BlogInteractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogInteractionView.swift; sourceTree = "<group>"; };
 		0914071125427B6700D5AB81 /* KeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
+		09140719254357F000D5AB81 /* BlogTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogTextField.swift; sourceTree = "<group>"; };
+		091407212543BDAB00D5AB81 /* AverageColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageColor.swift; sourceTree = "<group>"; };
+		091407262546962B00D5AB81 /* BlogOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogOptionView.swift; sourceTree = "<group>"; };
 		09662A0A253AA70C00EC0DBD /* MyBlogApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBlogApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09662A0D253AA70C00EC0DBD /* MyBlogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBlogApp.swift; sourceTree = "<group>"; };
 		09662A0F253AA70C00EC0DBD /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		09662A11253AA70F00EC0DBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09662A16253AA70F00EC0DBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09662A1B253AA71000EC0DBD /* MyBlogAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyBlogAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		09662A1F253AA71000EC0DBD /* AimeIOSChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimeIOSChallengeTests.swift; sourceTree = "<group>"; };
+		09662A1F253AA71000EC0DBD /* MyBlogAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBlogAppTests.swift; sourceTree = "<group>"; };
 		09662A21253AA71000EC0DBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09662A26253AA71000EC0DBD /* MyBlogAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyBlogAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09662A2A253AA71000EC0DBD /* AimeIOSChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimeIOSChallengeUITests.swift; sourceTree = "<group>"; };
@@ -174,7 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				09662A3B253AB6B000EC0DBD /* NetworkTests */,
-				09662A1F253AA71000EC0DBD /* AimeIOSChallengeTests.swift */,
+				09662A1F253AA71000EC0DBD /* MyBlogAppTests.swift */,
 				09662A21253AA71000EC0DBD /* Info.plist */,
 			);
 			path = MyBlogAppTests;
@@ -234,6 +240,8 @@
 				090458C5254212F00026C61D /* CardView.swift */,
 				09140701254240F300D5AB81 /* AnimatedButton.swift */,
 				091407062542539F00D5AB81 /* BlogInteractionView.swift */,
+				09140719254357F000D5AB81 /* BlogTextField.swift */,
+				091407262546962B00D5AB81 /* BlogOptionView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -252,6 +260,7 @@
 			children = (
 				09662A11253AA70F00EC0DBD /* Assets.xcassets */,
 				09DD12DE253F89F40097D9C2 /* Asset.swift */,
+				091407212543BDAB00D5AB81 /* AverageColor.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -400,15 +409,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				091407072542539F00D5AB81 /* BlogInteractionView.swift in Sources */,
+				091407222543BDAB00D5AB81 /* AverageColor.swift in Sources */,
 				09DD12DF253F89F40097D9C2 /* Asset.swift in Sources */,
 				09BA92A9253AC6FC009DFB99 /* Network.swift in Sources */,
 				09140702254240F300D5AB81 /* AnimatedButton.swift in Sources */,
 				09DD12D9253F89710097D9C2 /* Endpoint.swift in Sources */,
 				09BA92AF253ACD32009DFB99 /* NetworkResponse.swift in Sources */,
+				0914071A254357F000D5AB81 /* BlogTextField.swift in Sources */,
 				09DD12D4253F870A0097D9C2 /* CellViewModel.swift in Sources */,
 				09BF432B253FE79D00C8AA28 /* PhotoModel.swift in Sources */,
 				09DD12CF253F550D0097D9C2 /* Cell.swift in Sources */,
 				090458C6254212F00026C61D /* CardView.swift in Sources */,
+				091407272546962C00D5AB81 /* BlogOptionView.swift in Sources */,
 				09DD12BD253F4F5D0097D9C2 /* FeedViewModel.swift in Sources */,
 				09662A46253AB79B00EC0DBD /* NetworkManager.swift in Sources */,
 				09662A10253AA70C00EC0DBD /* FeedView.swift in Sources */,
@@ -423,7 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09662A3D253AB6DF00EC0DBD /* NetworkTests.swift in Sources */,
-				09662A20253AA71000EC0DBD /* AimeIOSChallengeTests.swift in Sources */,
+				09662A20253AA71000EC0DBD /* MyBlogAppTests.swift in Sources */,
 				09DD12C2253F4FE30097D9C2 /* ContentViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

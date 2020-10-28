@@ -7,7 +7,7 @@
 
 import XCTest
 import SwiftUI
-@testable import AimeIOSChallenge
+@testable import MyBlogApp
 
 // how do we know this class is conformed?
 // can save to favorites?
@@ -24,7 +24,7 @@ class ContentViewModelTests: XCTestCase {
     }
 
     func test_SUT_InitializesSuccessfully() {
-        let sut = ContentViewModel()
+        let sut = FeedViewModel()
         XCTAssertNotNil(sut)
     }
     

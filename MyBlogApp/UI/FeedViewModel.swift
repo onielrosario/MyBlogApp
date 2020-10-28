@@ -15,7 +15,6 @@ class FeedViewModel: ObservableObject {
         NetworkManager<[PhotoModel]>().loadData(endpoint: Endpoint.photos) { (result) in
             switch result {
             case .success(let collection):
-
                 DispatchQueue.main.async {
                     self.photoCollection = collection
                 }

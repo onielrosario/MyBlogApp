@@ -5,8 +5,9 @@
 //  Created by Oniel Rosario on 10/16/20.
 //
 
-import Foundation
+import UIKit
 import Combine
+
 
 enum NetworkError: Error {
     case failedResponse(Error)
@@ -47,3 +48,5 @@ class NetworkManager<Response: Codable>{
         }
     }
 }
+
+

@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import KingfisherSwiftUI
 
 enum OffsetState: CGFloat {
     case first = 0
     case second = 60
-    case third = 120
+    case third = 160
 }
 
 enum CellType {
@@ -43,22 +44,28 @@ private extension Cell {
 private extension Cell {
     func backCard() -> some View {
         CardView(
+            field: BlogTextField(
+                editingChanged: {_ in},
+                commit: {
+                    withAnimation {
+                        vm.comment()
+                    }
+                }),
             content:
-                Color(Asset.color(asset: .CardSecondaryBackground)),
+                Color(vm.imageColor ?? Asset.color(asset: .cardSecondaryBackground)),
             buttons: BlogInteractionView(
                 action: { type in
-                    if type == .like {
+                    switch type {
+                    case .like:
                         vm.like()
-                    }
-                    if type == .comment {
+                    case .comment:
                         withAnimation {
-                            vm.doubleExpanded.toggle()
-                            vm.offset = vm.doubleExpanded ? .third : .second
-                            vm.mode = vm.doubleExpanded ? .back : .front
+                            vm.comment()
                         }
-                    }
-                    if type == .favorite {
+                    case .favorite:
                         vm.addToFavorites()
+                    case .post:
+                        break
                     }
                 }),
             mode: $vm.mode)
@@ -66,25 +73,22 @@ private extension Cell {
     }
     
     func frontCard() -> some View {
-        CardView(
+        CardView<KFImage, AnimatedButton, BlogTextField>(
+            field: nil,
             content: vm.image.resizable(),
-            buttons: AnimatedButton(
-                kind: .post,
-                action: {
-                    withAnimation {
-                        vm.isExpanded.toggle()
-                        if vm.doubleExpanded {
-                            vm.doubleExpanded.toggle()
-                            vm.mode =  .front
-                        }
-                        vm.offset = vm.isExpanded ? .second : .first
+            buttons: AnimatedButton(kind: .post, action: {
+                withAnimation {
+                    vm.isExpanded.toggle()
+                    if vm.doubleExpanded {
+                        vm.doubleExpanded.toggle()
+                        vm.mode =  .front
                     }
-                }),
+                    vm.offset = vm.isExpanded ? .second : .first
+                }
+            }),
             mode: .constant(.front)
         )
     }
-    
-    
 }
 
 

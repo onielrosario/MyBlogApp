@@ -14,6 +14,8 @@ struct FeedView: View {
             VStack {
                 ForEach(vm.photoCollection, id: \.id) { item in
                     Cell().environmentObject(CellViewModel(model: item))
+                        .padding(.leading)
+                        .padding(.trailing)
                 }
             }
         }

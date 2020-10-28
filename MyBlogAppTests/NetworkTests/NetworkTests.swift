@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import AimeIOSChallenge
+@testable import MyBlogApp
 
 // can we test the endpoint?
 // can we add different object on the endpoint?
@@ -21,6 +21,10 @@ class NetworkTests: XCTestCase {
     
     override func tearDownWithError() throws {
         //       sut = nil
+    }
+    
+    struct ANYJSONFILE: Codable {
+        
     }
     
     func test_loadData_SuccessfulResponse() {

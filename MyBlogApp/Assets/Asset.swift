@@ -15,7 +15,8 @@ enum ImageAsset: String {
 }
 
 enum ColorAsset: String {
-    case CardSecondaryBackground
+    case cardSecondaryBackground
+    case blogTextFieldBackground
 }
 
 

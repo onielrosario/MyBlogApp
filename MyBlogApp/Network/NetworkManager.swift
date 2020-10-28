@@ -29,7 +29,9 @@ class NetworkManager<Response: Codable>{
         completionHandler: @escaping(Result<Response,NetworkError>) -> Void) {
         
         guard var components = URLComponents(url: URL(string: endpoint.url)!, resolvingAgainstBaseURL: true) else { return }
-        components.queryItems = [URLQueryItem(name: "client_id", value: "THIS_IS_YOUR_kEY")]
+        components.queryItems = [URLQueryItem(
+                                    name: "client_id",
+                                    value: Constants.apikEY)] // INSERT YOUR KEY
         
         session.loadData(from: components.url!) { (data, error) in
             
